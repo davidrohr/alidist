@@ -8,6 +8,8 @@ build_requires:
 ---
 #!/bin/bash -e
 
+sed -i 's/c++11/c++14/g' $SOURCEDIR/CMakeLists.txt
+
 cmake  $SOURCEDIR                           \
        -Dmomentum=GEV                       \
        -Dlength=MM                          \

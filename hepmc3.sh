@@ -10,6 +10,8 @@ build_requires:
 ---
 #!/bin/bash -e
 
+sed -i 's/c++11/c++17/g' $SOURCEDIR/CMakeLists.txt
+
 cmake  $SOURCEDIR                          \
        -DROOT_DIR=$ROOT_ROOT               \
        -DCMAKE_INSTALL_PREFIX=$INSTALLROOT \
