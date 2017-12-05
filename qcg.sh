@@ -10,6 +10,7 @@ valid_defaults:
   - o2-dataflow
 ---
 #!/bin/bash -e
+export ROOTSYS=`root-config --prefix`
 npm install @aliceo2/qc@${PKGVERSION:1} --only=production --loglevel=verbose --no-save --no-package-lock --unsafe-perm --prefix ./
 
 mkdir -p bin

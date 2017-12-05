@@ -39,6 +39,8 @@ esac
 
 [[ $BOOST_ROOT ]] && BOOST_NO_SYSTEM_PATHS=ON || BOOST_NO_SYSTEM_PATHS=OFF
 
+sed -i 's/NO_DEFAULT_PATH//' $SOURCEDIR/cmake/modules/FindROOT.cmake
+
 cmake $SOURCEDIR                                                                            \
       ${CMAKE_GENERATOR:+-G "$CMAKE_GENERATOR"}                                             \
       ${MACOSX_RPATH:+-DMACOSX_RPATH=${MACOSX_RPATH}}                                       \

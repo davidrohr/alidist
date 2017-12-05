@@ -21,6 +21,9 @@ build_requires:
   - CMake
   - "Xcode:(osx.*)"
   - alibuild-recipe-tools
+prefer_system: .*
+prefer_system_check: |
+  true
 env:
   ROOTSYS: "$ROOT_ROOT"
   SYSTEM_VERSION_COMPAT: "1"
