@@ -28,7 +28,7 @@ cmake $SOURCEDIR                                                         \
 
 # Limit the number of build processes to avoid exahusting memory when building
 # on smaller machines.
-JOBS=$((${JOBS:-1}*2/5))
+#JOBS=$((${JOBS:-1}*2/5))
 [[ $JOBS -gt 0 ]] || JOBS=1
 
 # This is needed because https://github.com/Homebrew/homebrew-core/pull/35735
