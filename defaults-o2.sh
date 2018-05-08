@@ -1,9 +1,9 @@
 package: defaults-o2
 version: v1
 env:
-  CFLAGS: -fPIC -O2
-  CMAKE_BUILD_TYPE: RELWITHDEBINFO
-  CXXFLAGS: -fPIC -O2 -std=c++20
+  CFLAGS: '-fPIC -pipe -O3 -march=native -g -DNDEBUG -DFAIR_MIN_SEVERITY=info'
+  CMAKE_BUILD_TYPE: 'CUSTOM_EXTERNAL'
+  CXXFLAGS: '-fPIC -pipe -O3 -march=native -g -DNDEBUG -DFAIR_MIN_SEVERITY=info -std=c++20'
   CXXSTD: '20'
   ENABLE_VMC: 'ON'
   GEANT4_BUILD_MULTITHREADED: 'OFF'
