@@ -227,7 +227,13 @@ cmake $SOURCEDIR -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                            
       ${ORT_CUDA_BUILD:+-DORT_CUDA_BUILD=${ORT_CUDA_BUILD}}                                               \
       ${ORT_MIGRAPHX_BUILD:+-DORT_MIGRAPHX_BUILD=${ORT_MIGRAPHX_BUILD}}                                   \
       ${ORT_TENSORRT_BUILD:+-DORT_TENSORRT_BUILD=${ORT_TENSORRT_BUILD}}                                   \
-      -DFFTW3f_DIR=/usr/lib64/cmake/fftw3/
+      -DFFTW3f_DIR=/usr/lib64/cmake/fftw3/                                                                \
+      -DENABLE_CUDA=On                                                                                    \
+      -DENABLE_OPENCL=On                                                                                  \
+      -DENABLE_HIP=On                                                                                     \
+      -DORT_CUDA_BUILD=On                                                                                 \
+      -DCUDA_COMPUTETARGET="86;89"                                                                        \
+      -DHIP_AMDGPUTARGET=gfx906
 # LLVM_ROOT is required for Gandiva
 
 cmake --build . -- ${JOBS+-j $JOBS} install
