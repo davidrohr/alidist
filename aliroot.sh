@@ -77,7 +77,15 @@ cmake $SOURCEDIR                                                     \
       ${ALICE_SHUTTLE:+-DDIMDIR=$HOME/dim -DODIR=linux}              \
       ${ALICE_SHUTTLE:+-DSHUTTLE=ON -DApMon=$ALIEN_RUNTIME_ROOT}     \
       -DOCDB_INSTALL=PLACEHOLDER                                     \
-      ${SPECIALFFLAGS:+-DCMAKE_Fortran_FLAGS="-fallow-argument-mismatch"}
+      ${SPECIALFFLAGS:+-DCMAKE_Fortran_FLAGS="-fallow-argument-mismatch"} \
+      -DENABLE_CUDA=ON                                               \
+      -DENABLE_OPENCL1=ON                                            \
+      -DENABLE_OPENCL2=ON                                            \
+      -DENABLE_HIP=ON                                                \
+      -DCMAKE_CXX_STANDARD=17                                        \
+      -DCUDA_COMPUTETARGET=86                                        \
+      -DHIP_AMDGPUTARGET=gfx906                                      \
+      -DOCL2_GPUTARGET=gfx906                                        \
 
 cmake --build . -- ${IGNORE_ERRORS:+-k} ${JOBS+-j $JOBS} install
 # ctest will succeed if no load_library tests were found

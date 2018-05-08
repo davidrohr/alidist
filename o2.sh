@@ -201,7 +201,14 @@ cmake $SOURCEDIR -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                            
       ${BUILD_TEST_ROOT_MACROS:+-BUILD_TEST_ROOT_MACROS=$BUILD_TEST_ROOT_MACROS}                          \
       ${ENABLE_UPGRADES:+-DENABLE_UPGRADES=$ENABLE_UPGRADES}                                              \
       ${ARROW_ROOT:+-Dgandiva_DIR=$ARROW_ROOT/lib/cmake/arrow} \
-      -DANALYSIS_COMPILE_POOL=1024
+      -DANALYSIS_COMPILE_POOL=1024 \
+      -DENABLE_CUDA=On                                                                      \
+      -DENABLE_OPENCL1=On                                                                   \
+      -DENABLE_OPENCL2=On                                                                   \
+      -DENABLE_HIP=On                                                                       \
+      -DCUDA_COMPUTETARGET=86                                                               \
+      -DHIP_AMDGPUTARGET=gfx906                                                             \
+      -DOCL2_GPUTARGET=gfx906                                                               \
 
 cmake --build . -- ${JOBS+-j $JOBS} install
 
