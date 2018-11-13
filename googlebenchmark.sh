@@ -5,6 +5,9 @@ source: https://github.com/google/benchmark
 build_requires:
  - "GCC-Toolchain:(?!osx)"
  - CMake
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 cmake $SOURCEDIR                           \

@@ -153,6 +153,8 @@ export MS_GSL_ROOT=/usr
 export RAPIDJSON_ROOT=/usr
 export CGAL_ROOT=/usr
 export GMP_ROOT=/usr
+export ARROW_ROOT=/usr
+export GOOGLEBENCHMARK_ROOT=/usr
 
 # This affects only PR checkers
 if [[ $ALIBUILD_O2_TESTS ]]; then

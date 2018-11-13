@@ -16,7 +16,9 @@ build_requires:
   - re2
   - alibuild-recipe-tools
 env:
-  ARROW_HOME: "$ARROW_ROOT"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 
 mkdir -p $INSTALLROOT
