@@ -8,7 +8,8 @@ build_requires:
 #!/bin/sh
 
 cmake $SOURCEDIR                                                       \
-      -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                     
+      -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                     \
+      -DCMAKE_CXX_FLAGS="-Wno-error=implicit-fallthrough -Wno-error=class-memaccess"
 
 make ${JOBS:+-j$JOBS} install
 
