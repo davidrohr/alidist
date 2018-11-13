@@ -12,6 +12,9 @@ requires:
   - Eigen3
   - onnx
   - gpu-system
+prefer_system: .*
+prefer_system_check: |
+  true
 build_requires:
   - date
   - safe_int
@@ -22,6 +25,9 @@ build_requires:
   - "Python"  # this package builds ONNX, which requires Python
 prepend_path:
   ROOT_INCLUDE_PATH: "$ONNXRUNTIME_ROOT/include/onnxruntime"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 

@@ -7,6 +7,9 @@ build_requires:
   - alibuild-recipe-tools
   - CMake
   - "GCC-Toolchain:(?!osx)"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 # ROOT and O2 need different variants of fftw3, but we cannot configure fftw3

@@ -21,7 +21,9 @@ build_requires:
   - ninja
   - Python
 env:
-  ARROW_HOME: "$ARROW_ROOT"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 mkdir -p "$INSTALLROOT"

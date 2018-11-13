@@ -21,6 +21,9 @@ env:
   XRD_CONNECTIONRETRY: "1"
   XRD_TIMEOUTRESOLUTION: "1"
   XRD_REQUESTTIMEOUT: "150"
+prefer_system: (?!slc5|slc6)
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 

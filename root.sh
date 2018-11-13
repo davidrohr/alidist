@@ -28,6 +28,9 @@ build_requires:
   - "Xcode:(osx.*)"
   - alibuild-recipe-tools
   - ninja
+prefer_system: .*
+prefer_system_check: |
+  true
 env:
   ROOTSYS: "$ROOT_ROOT"
 prepend_path:

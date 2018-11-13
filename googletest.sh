@@ -2,6 +2,9 @@ package: googletest
 version: "1.8.0"
 tag: release-1.8.0
 source: https://github.com/google/googletest
+prefer_system: .*
+prefer_system_check: |
+  true
 build_requires:
   - "GCC-Toolchain:(?!osx)"
   - CMake

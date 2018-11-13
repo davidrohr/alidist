@@ -167,6 +167,13 @@ case $ARCHITECTURE in
   ;;
 esac
 
+export MS_GSL_ROOT=/usr
+export RAPIDJSON_ROOT=/usr
+export CGAL_ROOT=/usr
+export GMP_ROOT=/usr
+export ARROW_ROOT=/usr
+export GOOGLEBENCHMARK_ROOT=/usr
+
 # This affects only PR checkers
 if [[ $ALIBUILD_O2_TESTS ]]; then
   # Impose extra errors.
@@ -219,7 +226,8 @@ cmake $SOURCEDIR -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                            
       ${ORT_ROCM_BUILD:+-DORT_ROCM_BUILD=${ORT_ROCM_BUILD}}                                               \
       ${ORT_CUDA_BUILD:+-DORT_CUDA_BUILD=${ORT_CUDA_BUILD}}                                               \
       ${ORT_MIGRAPHX_BUILD:+-DORT_MIGRAPHX_BUILD=${ORT_MIGRAPHX_BUILD}}                                   \
-      ${ORT_TENSORRT_BUILD:+-DORT_TENSORRT_BUILD=${ORT_TENSORRT_BUILD}}
+      ${ORT_TENSORRT_BUILD:+-DORT_TENSORRT_BUILD=${ORT_TENSORRT_BUILD}}                                   \
+      -DFFTW3f_DIR=/usr/lib64/cmake/fftw3/
 # LLVM_ROOT is required for Gandiva
 
 cmake --build . -- ${JOBS+-j $JOBS} install
@@ -259,8 +267,6 @@ module load BASE/1.0 \\
             ${CONFIGURATION_REVISION:+Configuration/$CONFIGURATION_VERSION-$CONFIGURATION_REVISION} \\
             ${LIBINFOLOGGER_REVISION:+libInfoLogger/$LIBINFOLOGGER_VERSION-$LIBINFOLOGGER_REVISION} \\
             ${COMMON_O2_REVISION:+Common-O2/$COMMON_O2_VERSION-$COMMON_O2_REVISION}                 \\
-            ms_gsl/$MS_GSL_VERSION-$MS_GSL_REVISION                                                 \\
-            ${ARROW_REVISION:+arrow/$ARROW_VERSION-$ARROW_REVISION}                                 \\
             ${DEBUGGUI_REVISION:+DebugGUI/$DEBUGGUI_VERSION-$DEBUGGUI_REVISION}                     \\
             ${LIBUV_REVISION:+libuv/$LIBUV_VERSION-$LIBUV_REVISION}                                 \\
             ${JALIEN_ROOT_REVISION:+JAliEn-ROOT/$JALIEN_ROOT_VERSION-$JALIEN_ROOT_REVISION}         \\

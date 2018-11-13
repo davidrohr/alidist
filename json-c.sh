@@ -6,6 +6,9 @@ build_requires:
   - CMake
   - "GCC-Toolchain:(?!osx)"
   - alibuild-recipe-tools
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 

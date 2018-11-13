@@ -36,6 +36,7 @@ cmake "$SOURCEDIR" "-DCMAKE_INSTALL_PREFIX=$INSTALLROOT"                    \
       ${LIBUV_ROOT:+-DLibUV_ROOT=$LIBUV_ROOT}                               \
       ${ALIBUILD_O2PHYSICS_TESTS:+-DO2PHYSICS_WARNINGS_AS_ERRORS=ON}        \
       -DANALYSIS_COMPILE_POOL=64 \
+      -DFFTW3f_DIR=/usr/lib64/cmake/fftw3/ \
 cmake --build . -- ${JOBS+-j $JOBS} install
 
 # export compile_commands.json in (taken from o2.sh)

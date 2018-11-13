@@ -17,6 +17,8 @@ cmake "$SOURCEDIR" \
 
 make ${JOBS+-j $JOBS} install
 
+export ROOTSYS=`which root`/../
+
 # Relocation of .cmake files
 for CMAKE in $(find "$INSTALLROOT/lib" -name '*.cmake'); do
   sed -ideleteme -e "s!$ROOTSYS!\$ENV{ROOTSYS}!g; s!$G4INSTALL!\$ENV{G4INSTALL}!g" "$CMAKE"

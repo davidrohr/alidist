@@ -14,15 +14,7 @@ prepend_path:
   PYTHONPATH: "$PYTHON_MODULES_ROOT/lib/python/site-packages"
 prefer_system: ".*"
 prefer_system_check: |
-  # if we are in a virtualenv, assume people know what they are doing
-  # and simply use the virtualenv recipe.
-  if [ -n "$VIRTUAL_ENV" ]; then
-    echo "alibuild_system_replace: virtualenv"
-    exit 0
-  fi
-  # If not, either they are using the system python or they are using our own python.
-  # In both cases we can simply create our own virtualenv
-  exit 1
+  true
 prefer_system_replacement_specs:
   virtualenv:
     version: "virtualenv"

@@ -4,6 +4,9 @@ tag: CLHEP_2_2_0_8
 source: https://github.com/alisw/clhep
 build_requires:
   - CMake
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/sh
 cmake $SOURCEDIR \

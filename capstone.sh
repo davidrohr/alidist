@@ -10,6 +10,9 @@ build_requires:
 source: https://github.com/aquynh/capstone
 prepend_path:
   PKG_CONFIG_PATH: "$CAPSTONE_ROOT/lib/pkgconfig"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 cmake $SOURCEDIR                          \
       -G Ninja                            \

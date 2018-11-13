@@ -12,6 +12,9 @@ build_requires:
   - abseil
   - ninja
 source: https://github.com/grpc/grpc
+prefer_system: (?!slc5)
+prefer_system_check: |
+  true
 incremental_recipe: |
   cmake --build . -- ${JOBS:+-j$JOBS} install
   mkdir -p $INSTALLROOT/etc/modulefiles && rsync -a --delete etc/modulefiles/ $INSTALLROOT/etc/modulefiles

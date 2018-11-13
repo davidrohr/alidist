@@ -9,9 +9,9 @@ build_requires:
   - alibuild-recipe-tools
   - ninja
 source: https://github.com/abseil/abseil-cpp
-prefer_system: "osx"
+prefer_system: .*
 prefer_system_check: |
-  printf '#include <absl/container/flat_hash_map.h>' | c++ -std=c++20 -I"$(brew --prefix abseil)/include" -c -xc++ - >/dev/null
+  true
 incremental_recipe: |
   cmake --build . -- ${JOBS:+-j$JOBS} install
   mkdir -p $INSTALLROOT/etc/modulefiles && rsync -a --delete etc/modulefiles/ $INSTALLROOT/etc/modulefiles

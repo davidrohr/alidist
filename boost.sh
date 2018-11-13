@@ -11,6 +11,9 @@ build_requires:
   - lzma
   - bz2
   - alibuild-recipe-tools
+prefer_system: (?!slc5)
+prefer_system_check: |
+  true
 prepend_path:
   ROOT_INCLUDE_PATH: "$BOOST_ROOT/include"
 ---

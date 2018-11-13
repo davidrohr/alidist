@@ -7,6 +7,9 @@ build_requires:
   - "CMake"
   - ninja
   - alibuild-recipe-tools
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 cd $BUILDDIR
 cmake $SOURCEDIR                          \

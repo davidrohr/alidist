@@ -71,6 +71,9 @@ if [[ $ALIBUILD_O2_TESTS ]]; then
 fi
 CXXFLAGS="${CXXFLAGS} -Wno-error=deprecated-declarations -Wno-error=unused-function"  # Outside the if to make sure we have it in all cases
 
+export MS_GSL_ROOT=/usr
+export ARROW_ROOT=/usr
+
 cmake $SOURCEDIR                                                                                                \
       -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                                                                       \
       -G  Ninja                                                                                                 \
@@ -86,7 +89,6 @@ cmake $SOURCEDIR                                                                
       ${ARROW_ROOT:+-DArrow_DIR=$ARROW_ROOT/lib/cmake/Arrow}                                                    \
       ${ARROW_ROOT:+${CLANG_ROOT:+-DLLVM_ROOT=$CLANG_ROOT}}                                                     \
       ${CLANG_ROOT:+-DLLVM_ROOT="$CLANG_ROOT"}                                                                  \
-      ${CONTROL_OCCPLUGIN_REVISION:+-DOcc_ROOT=$CONTROL_OCCPLUGIN_ROOT}                                         \
       ${CXXSTD:+-DCMAKE_CXX_STANDARD=$CXXSTD}                                                                   \
       ${OPENSSL_ROOT_DIR:+-DOPENSSL_ROOT_DIR=$OPENSSL_ROOT_DIR}                                                 \
       ${OPENSSL_ROOT:+-DOPENSSL_INCLUDE_DIRS=$OPENSSL_ROOT/include}                                             \
@@ -97,6 +99,7 @@ cmake $SOURCEDIR                                                                
       ${CLANG_REVISION:+-DCLANG_EXECUTABLE="$CLANG_ROOT/bin-safe/clang"}                                        \
       ${CLANG_REVISION:+-DLLVM_LINK_EXECUTABLE="$CLANG_ROOT/bin/llvm-link"}                                     \
       ${BOOKKEEPING_API_REVISION:+-DBookkeepingApi_ROOT=$BOOKKEEPINGAPI_ROOT}                                   \
+      -DFFTW3f_DIR=/usr/lib64/cmake/fftw3/ \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
 cp ${BUILDDIR}/compile_commands.json ${INSTALLROOT}

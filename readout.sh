@@ -38,6 +38,8 @@ case $ARCHITECTURE in
     ;;
 esac
 
+export ZMQ_ROOT=/usr
+
 cmake $SOURCEDIR                                                         \
       -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-Wno-error"                      \
       -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                                \
