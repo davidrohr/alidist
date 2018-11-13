@@ -5,6 +5,9 @@ source: https://gitlab.cern.ch/hepmc/HepMC.git
 build_requires:
   - CMake
   - GCC-Toolchain:(?!osx.*)
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 

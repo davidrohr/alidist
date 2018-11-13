@@ -7,6 +7,9 @@ build_requires:
   - MPFR
   - CMake
   - system-curl
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 case $ARCHITECTURE in

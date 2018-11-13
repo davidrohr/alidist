@@ -12,6 +12,9 @@ build_requires:
  - "osx-system-openssl:(osx.*)"
  - "GCC-Toolchain:(?!osx)"
  - UUID:(?!osx)
+prefer_system: (?!slc5|slc6)
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 [[ -e $SOURCEDIR/bindings ]] && XROOTD_V4=True && XROOTD_PYTHON=True || XROOTD_PYTHON=False

@@ -10,6 +10,9 @@ build_requires:
  - "autotools:(slc6|slc7)"
 env:
   PYTHONPATH: $LHAPDF_ROOT/lib/python/site-packages
+prefer_system: "(?!slc5)"
+prefer_system_check: |
+  printf "#include \"LHAPDF/Version.h\"\nint main(){}" | c++ -I$(brew --prefix LHAPDF)/include -Wno-deprecated-declarations -xc++ - -o /dev/null
 ---
 #!/bin/bash -ex
 case $ARCHITECTURE in

@@ -24,6 +24,8 @@ env:
 rsync -a --delete --exclude='**/.git' --delete-excluded \
       $SOURCEDIR/ ./
 ./bootstrap.sh
+sed -i "s/-lXrdSec/-lXrdSec-4/g" client/gclientlib/Makefile.am
+sed -i "s/-lXrdOfs//g" server/Makefile.am
 autoreconf -ivf
 case $ARCHITECTURE in
   osx*)
@@ -31,6 +33,7 @@ case $ARCHITECTURE in
     EXTRA_PERL_CXXFLAGS="-I$(perl -MConfig -e 'print $Config{archlib}')/CORE"
   ;;
 esac
+export XROOTD_ROOT=/usr
 export CXXFLAGS="$CXXFLAGS -I$XROOTD_ROOT/include -I$XROOTD_ROOT/include/xrootd/private \
                  ${UUID_ROOT:+-I$UUID_ROOT/include -L$UUID_ROOT/lib}                    \
                  ${OPENSSL_ROOT:+-I$OPENSSL_ROOT/include -L$OPENSSL_ROOT/lib}           \

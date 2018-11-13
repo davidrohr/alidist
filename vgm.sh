@@ -9,6 +9,7 @@ build_requires:
   - CMake
 ---
 #!/bin/bash -e
+export CLHEP_BASE_DIR=/usr
 cmake "$SOURCEDIR" \
   -DCMAKE_CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} \
   -DCMAKE_INSTALL_LIBDIR="lib"                 \

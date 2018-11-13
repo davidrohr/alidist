@@ -1,6 +1,9 @@
 package: CLHEP
 version: "2.2.0.8"
 source: https://github.com/alisw/clhep
+prefer_system: .*
+prefer_system_check: |
+  true
 tag: CLHEP_2_2_0_8
 ---
 #!/bin/sh
