@@ -4,6 +4,9 @@ source: https://github.com/google/protobuf
 build_requires:
  - CMake
  - "GCC-Toolchain:(?!osx)"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 
 cmake $SOURCEDIR/cmake                  \

@@ -4,6 +4,9 @@ tag: 091de040edb3355dcf2f4a18c425aec51b906f08
 source: https://github.com/Tencent/rapidjson.git
 build_requires:
   - CMake
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/sh
 

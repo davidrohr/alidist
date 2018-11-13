@@ -149,6 +149,11 @@ case $ARCHITECTURE in
   *) SONAME=so ;;
 esac
 
+export MS_GSL_ROOT=/usr
+export RAPIDJSON_ROOT=/usr
+export CGAL_ROOT=/usr
+export GMP_ROOT=/usr
+
 # This affects only PR checkers
 if [[ $ALIBUILD_O2_TESTS ]]; then
   # Impose extra errors.
@@ -231,8 +236,6 @@ module load BASE/1.0 \\
             ${CONFIGURATION_REVISION:+Configuration/$CONFIGURATION_VERSION-$CONFIGURATION_REVISION} \\
             ${LIBINFOLOGGER_REVISION:+libInfoLogger/$LIBINFOLOGGER_VERSION-$LIBINFOLOGGER_REVISION} \\
             ${COMMON_O2_REVISION:+Common-O2/$COMMON_O2_VERSION-$COMMON_O2_REVISION}                 \\
-            ms_gsl/$MS_GSL_VERSION-$MS_GSL_REVISION                                                 \\
-            ${ARROW_REVISION:+arrow/$ARROW_VERSION-$ARROW_REVISION}                                 \\
             ${DEBUGGUI_REVISION:+DebugGUI/$DEBUGGUI_VERSION-$DEBUGGUI_REVISION}                     \\
             ${LIBUV_REVISION:+libuv/$LIBUV_VERSION-$LIBUV_REVISION}                                 \\
             ${JALIEN_ROOT_REVISION:+JAliEn-ROOT/$JALIEN_ROOT_VERSION-$JALIEN_ROOT_REVISION}         \\

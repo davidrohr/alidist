@@ -4,6 +4,9 @@ tag: cares-1_17_1
 build_requires:
   - "GCC-Toolchain:(?!osx)"
   - CMake
+prefer_system: (?!slc5)
+prefer_system_check: |
+  true
 source: https://github.com/c-ares/c-ares
 incremental_recipe: |
   make ${JOBS:+-j$JOBS} install

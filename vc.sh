@@ -9,6 +9,9 @@ build_requires:
   - alibuild-recipe-tools
 prepend_path:
   ROOT_INCLUDE_PATH: "$VC_ROOT/include"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 cmake $SOURCEDIR -DCMAKE_INSTALL_PREFIX=$INSTALLROOT -DBUILD_TESTING=OFF

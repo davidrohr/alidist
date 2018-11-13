@@ -6,6 +6,9 @@ build_requires:
  - "OpenSSL:(?!osx)"
  - CMake
  - alibuild-recipe-tools
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 

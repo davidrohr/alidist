@@ -61,6 +61,8 @@ if [[ ! $CMAKE_GENERATOR && $DISABLE_NINJA != 1 && $DEVEL_SOURCES != $SOURCEDIR 
   unset NINJA_BIN
 fi
 
+export MS_GSL_ROOT=/usr
+
 cmake $SOURCEDIR                                              \
       -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                     \
       ${CMAKE_GENERATOR:+-G "$CMAKE_GENERATOR"}               \

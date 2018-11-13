@@ -4,6 +4,9 @@ tag: v6.2.1
 source: https://github.com/alisw/GMP.git
 requires:
  - "GCC-Toolchain:(?!osx)"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/sh
 case $ARCHITECTURE in

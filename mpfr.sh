@@ -6,6 +6,9 @@ build_requires:
   - "autotools:(slc6|slc7)"
   - GMP
   - alibuild-recipe-tools
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/sh
 rsync -a --delete --exclude '**/.git' $SOURCEDIR/ ./

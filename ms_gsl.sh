@@ -4,6 +4,9 @@ tag: v2.1.0
 source: https://github.com/Microsoft/GSL.git
 prepend_path:
   ROOT_INCLUDE_PATH: "$MS_GSL_ROOT/include"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 

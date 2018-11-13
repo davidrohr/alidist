@@ -10,6 +10,9 @@ build_requires:
   - CMake
   - abseil
 source: https://github.com/alisw/grpc
+prefer_system: (?!slc5)
+prefer_system_check: |
+  true
 incremental_recipe: |
   make ${JOBS:+-j$JOBS} install
   mkdir -p $INSTALLROOT/etc/modulefiles && rsync -a --delete etc/modulefiles/ $INSTALLROOT/etc/modulefiles

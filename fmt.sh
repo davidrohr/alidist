@@ -8,6 +8,9 @@ build_requires:
   - CMake
 prepend_path:
   ROOT_INCLUDE_PATH: "$FMT_ROOT/include"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 cmake $SOURCEDIR -DCMAKE_INSTALL_PREFIX=$INSTALLROOT -DFMT_TEST=OFF -DCMAKE_INSTALL_LIBDIR=lib

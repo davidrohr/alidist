@@ -45,6 +45,8 @@ if [[ $ALIBUILD_O2_TESTS ]]; then
   esac
 fi
 
+export ZMQ_ROOT=/usr
+
 cmake $SOURCEDIR                                                         \
       -DCMAKE_INSTALL_PREFIX=$INSTALLROOT                                \
       ${BOOST_REVISION:+-DBOOST_ROOT=$BOOST_ROOT}                         \

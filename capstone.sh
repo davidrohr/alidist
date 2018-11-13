@@ -6,6 +6,9 @@ build_requires:
   - CMake
   - alibuild-recipe-tools
 source: https://github.com/aquynh/capstone
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 cmake $SOURCEDIR                          \
       -DCAPSTONE_ARCHITECUTRE_DEFAULT=OFF \
