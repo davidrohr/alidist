@@ -5,6 +5,9 @@ tag: "428-alice2"
 source: https://github.com/alisw/pythia6.git
 requires:
   - GCC-Toolchain:(?!osx)
+prefer_system: .*
+prefer_system_check: |
+  true
 build_requires:
   - CMake
 ---

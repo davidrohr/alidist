@@ -6,6 +6,9 @@ requires:
   - lhapdf
   - HepMC
   - boost
+prefer_system: .*
+prefer_system_check: |
+  true
 env:
   PYTHIA8DATA: "$PYTHIA_ROOT/share/Pythia8/xmldoc"
   PYTHIA8: "$PYTHIA_ROOT"
