@@ -7,6 +7,9 @@ requires:
   - GEANT4
 build_requires:
   - CMake
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 export CLHEP_BASE_DIR=/usr

@@ -8,10 +8,13 @@ build_requires:
   - CMake
   - "Xcode:(osx.*)"
 prepend_path:
-  ROOT_INCLUDE_PATH: "$GEANT4_ROOT/include:$GEANT4_ROOT/include/Geant4"
+  ROOT_INCLUDE_PATH: "/usr/include/geant4vmc"
 incremental_recipe: |
   make ${JOBS:+-j$JOBS} install
   mkdir -p $INSTALLROOT/etc/modulefiles && rsync -a --delete etc/modulefiles/ $INSTALLROOT/etc/modulefiles
+prefer_system: .*
+prefer_system_check: |
+  true
 env:
   G4INSTALL : $GEANT4_ROOT
 

@@ -10,6 +10,9 @@ source: https://github.com/vmc-project/geant3
 prepend_path:
   LD_LIBRARY_PATH: "$GEANT3_ROOT/lib64"
   ROOT_INCLUDE_PATH: "$GEANT3_ROOT/include/TGeant3"
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/bash -e
 FVERSION=`gfortran --version | grep -i fortran | sed -e 's/.* //' | cut -d. -f1`
