@@ -18,10 +18,11 @@ case $ARCHITECTURE in
     *)
 	;;
 esac
+CLANG_VERSION_MAJOR=`echo $CLANG_VERSION | sed "s/\./ /g" | awk '{print $1}'`
 cmake $SOURCEDIR -DCMAKE_INSTALL_PREFIX=$INSTALLROOT     \
                  -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE    \
-                 -DClang_DIR=$CLANG_ROOT/lib/cmake/clang \
-                 -DLLVM_DIR=$CLANG_ROOT/lib/cmake/llvm
+                 -DClang_DIR=/usr/lib/llvm/$CLANG_VERSION_MAJOR/lib64/cmake/clang \
+                 -DLLVM_DIR=/usr/lib/llvm/$CLANG_VERSION_MAJOR/lib64/cmake/llvm
 make ${JOBS+-j$JOBS} install
 ctest
 
