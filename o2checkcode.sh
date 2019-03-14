@@ -12,6 +12,7 @@ force_rebuild: 1
 # Runs a set of (selected) code checks on the O2 code-base. Assumes the
 # compile_commands.json file is available under $O2_ROOT
 cp "${O2_ROOT}"/compile_commands.json .
+export CPATH=$CPATH:/usr/lib/clang/8.0.0/include/
 
 # We will try to setup a list of files to be checked by using 2 specific Git commits to compare
 

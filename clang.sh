@@ -9,6 +9,9 @@ build_requires:
  - "Python-system:(?!slc.*)"
  - CMake
  - system-curl
+prefer_system: .*
+prefer_system_check: |
+  true
 ---
 #!/bin/sh
 
