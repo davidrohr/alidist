@@ -12,6 +12,8 @@ rsync -a --exclude='**/.git' --delete --delete-excluded \
       $SOURCEDIR/ ./
 autoreconf -ivf
 
+export LIBTIRPC_ROOT=/usr
+
 if [[ -n ${LIBTIRPC_ROOT} ]];
 then
   export CXXFLAGS="${CXXFLAGS} -I${LIBTIRPC_ROOT}/include/tirpc"
@@ -21,6 +23,8 @@ fi
 ./configure --prefix=$INSTALLROOT
 make ${JOBS:+-j$JOBS}
 make install
+ln -s /usr/include/tirpc/rpc $INSTALLROOT/include
+ln -s /usr/include/tirpc/netconfig.h $INSTALLROOT/include
 
 find $INSTALLROOT -name '*.la' -delete
 
