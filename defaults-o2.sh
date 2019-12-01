@@ -7,6 +7,8 @@ env:
   CXXSTD: "17"
   GEANT4_BUILD_MULTITHREADED: "ON"
   ENABLE_VMC: "ON"
+disable:
+  - DPMJET
 overrides:
   AliRoot:
     version: "%(commit_hash)s_O2"
