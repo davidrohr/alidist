@@ -9,9 +9,6 @@ requires:
 build_requires:
   - CMake
   - abseil
-prefer_system: (?!slc5)
-prefer_system_check: |
-  true
 source: https://github.com/alisw/grpc
 incremental_recipe: |
   make ${JOBS:+-j$JOBS} install
