@@ -8,6 +8,9 @@ build_requires:
   - "GCC-Toolchain:(?!osx)"
   - alibuild-recipe-tools
   - ninja
+prefer_system: "(?!slc5)"
+prefer_system_check: |
+  true
 ---
 cmake "$SOURCEDIR"                                                                                                      \
       -G 'Ninja'                                                                                                        \
