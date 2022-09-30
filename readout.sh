@@ -10,7 +10,7 @@ requires:
   - FairLogger
   - Monitoring
   - Configuration
-  - "ReadoutCard:(slc.*_x86-64)"
+  - ReadoutCard
   - lz4
   - Control-OCCPlugin
   - ZeroMQ
