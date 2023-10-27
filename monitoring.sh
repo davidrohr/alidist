@@ -24,6 +24,7 @@ esac
 if [[ $ALIBUILD_O2_TESTS ]]; then
   CXXFLAGS="${CXXFLAGS} -Werror -Wno-error=deprecated-declarations"
 fi
+CXXFLAGS="${CXXFLAGS} -Wno-error"
 
 cmake $SOURCEDIR                                              \
   ${LIBRDKAFKA_REVISION:+-DRDKAFKA_ROOT="${LIBRDKAFKA_ROOT}"} \
