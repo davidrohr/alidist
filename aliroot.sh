@@ -101,7 +101,7 @@ cmake $SOURCEDIR                                                     \
       -DENABLE_OPENCL1=ON                                            \
       -DENABLE_OPENCL2=ON                                            \
       -DENABLE_HIP=ON                                                \
-      -DCMAKE_CXX_STANDARD=17                                        \
+      -DCMAKE_CXX_STANDARD=20                                        \
       -DCUDA_COMPUTETARGET=86                                        \
       -DHIP_AMDGPUTARGET=gfx906                                      \
       -DOCL2_GPUTARGET=gfx906                                        \
