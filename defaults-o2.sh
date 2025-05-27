@@ -11,6 +11,15 @@ env:
 disable:
   - mesos
   - MySQL
+  - DPMJET
+  - FLUKA
+  - FLUKA_VMC
+  - O2Physics
+  - AliGenerators
+  - AliGenO2
+  - ODC
+  - Control-OCCPlugin
+  - DDS
 overrides:
   AliPhysics:
     version: '%(commit_hash)s_O2'
